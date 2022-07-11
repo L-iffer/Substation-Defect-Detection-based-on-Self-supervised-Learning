@@ -9,8 +9,25 @@ python main.py \
   -a resnet50 \
   --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0 \
   --fix-pred-lr \
-  [your COCO-folder with train and val folders]
+  [your COCO-folder with train folders]
 ```
+存放自监督预训练数据集的目录结构如下：
 
+```
+datasets/
+  COCO2017/
+    train/
+      n0/
+        0001.jpg
+        0002.jpg
+        ...
+      n1/
+        0003.jpg
+        0004.jpg
+        ...
+      ...
+```
+下游目标检测
+------
 
 
