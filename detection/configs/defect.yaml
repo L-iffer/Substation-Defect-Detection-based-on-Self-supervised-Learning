@@ -1,12 +1,11 @@
 _BASE_: "Base-RCNN-C4-BN.yaml"
 MODEL:
   MASK_ON: False
-  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  WEIGHTS: "See Instructions"
   ROI_HEADS:
     NUM_CLASSES: 5
   PIXEL_MEAN: [123.675, 116.280, 103.530]
   PIXEL_STD: [58.395, 57.120, 57.375]
-  WEIGHTS: "See Instructions"
   RESNETS:
     STRIDE_IN_1X1: False
 INPUT:
