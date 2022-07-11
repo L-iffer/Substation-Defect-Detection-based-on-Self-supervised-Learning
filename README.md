@@ -29,5 +29,5 @@ datasets/
 ```
 下游目标检测
 ------
-
+首先，需要安装[detectron2](https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md)。
 
