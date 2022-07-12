@@ -228,7 +228,7 @@ def main_worker(gpu, ngpus_per_node, args):
             transforms.ColorJitter(0.4, 0.4, 0.4, 0.1)  # not strengthened
         ], p=0.8),
         transforms.RandomGrayscale(p=0.2),
-        transforms.RandomApply([simsiam.loader.GaussianBlur([.1, 2.])], p=0.5),
+        transforms.RandomApply([SimSiamPro.loader.GaussianBlur([.1, 2.])], p=0.5),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         normalize
@@ -236,7 +236,7 @@ def main_worker(gpu, ngpus_per_node, args):
     
     train_dataset = datasets.ImageFolder(
         traindir,
-        simsiam.loader.TwoCropsTransform(transforms.Compose(augmentation)))
+        SimSiamPro.loader.TwoCropsTransform(transforms.Compose(augmentation)))
 
     if args.distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)
