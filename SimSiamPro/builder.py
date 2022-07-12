@@ -46,11 +46,11 @@ class SimSiam(nn.Module):
         prev_dim = 2048
 
         # projector MLP
-        self.encoder.fc1 = nn.Sequential(nn.Conv2d(in_channels=prev_dim, out_channels=prev_dim, kernel_size=1, bias=False),  # 若想减少参数量out_channels可以改成512
+        self.encoder.fc1 = nn.Sequential(nn.Conv2d(in_channels=prev_dim, out_channels=prev_dim, kernel_size=1, bias=False),
                                         nn.BatchNorm2d(prev_dim),
                                         nn.ReLU(inplace=True))
         self.encoder.sa1 = SpatialAttention()
-        self.encoder.fc2 = nn.Sequential(nn.Conv2d(in_channels=prev_dim, out_channels=prev_dim, kernel_size=1, bias=False),  # 若想减少参数量,相应的in_channels可以改成512
+        self.encoder.fc2 = nn.Sequential(nn.Conv2d(in_channels=prev_dim, out_channels=prev_dim, kernel_size=1, bias=False),
                                         nn.BatchNorm2d(prev_dim),
                                         nn.ReLU(inplace=True))
         self.encoder.sa2 = SpatialAttention()
