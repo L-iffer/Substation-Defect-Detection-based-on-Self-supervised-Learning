@@ -10,7 +10,7 @@ def averCosineSimilatiry(A, B):
     # param B: 表示特征图2:[N, C, H, W]
     # return: 返回均值相似度:[N]
     
-    N = A.shape[0]  # 表示当前批次中图片数量
+    N = A.shape[0] 
 
     criterion_similarity = nn.CosineSimilarity(dim=1).cuda()
 
@@ -20,7 +20,7 @@ def averCosineSimilatiry(A, B):
     A = A.view(A.shape[0], A.shape[1])  # [N, C]
     B = B.view(B.shape[0], B.shape[1])  # [N, C]
 
-    A = F.normalize(A, dim=1)  # 如果需要使用欧氏距离损失函数,那么将向量进行l2标准化
+    A = F.normalize(A, dim=1)  # l2
     B = F.normalize(B, dim=1)
     
     similarity = criterion_similarity(A, B)
