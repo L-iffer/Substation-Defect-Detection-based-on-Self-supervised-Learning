@@ -31,3 +31,19 @@ datasets/
 ------
 首先，需要安装[detectron2](https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md)。
 
+__预测：__
+
+```
+cd detection \
+  python demo.py \
+  --config-file configs/voc.yaml \
+  --input images/input1.jpg \
+  --output output/
+  --opts MODEL.WEIGHTS models/voc_inference.pkl
+```
+在预测的脚本文件中：  
+* --config-file：在缺陷图像上预测使用configs/defect.yaml，默认在Pascal VOC图像上进行预测。
+* --input：待预测的图像。
+* --output：保存预测结果。
+* MODEL.WEIGHTS：指定模型权重文件，在缺陷图像上预测使用models/defect_inference.pkl，默认在Pascal VOC图像上进行预测。
+* 使用cpu进行预测，在 --opts 后面添加 MODEL.DEVICE cpu，默认使用cuda加速。
