@@ -2,6 +2,11 @@
 ![image](https://github.com/L-iffer/Substation-Defect-Detection-based-on-Self-supervised-Learning/blob/master/images/SimSiamPro.png)
 自监督预训练
 ------
+__安装依赖__
+
+* 安装PyTorch ([pytorch.org](https://pytorch.org/))
+* `pip install -r requirements.txt`
+
 仅支持多卡（多进程）分布式训练，不支持单卡（单进程）多线程训练。在COCO数据集上进行自监督预训练，运行脚本如下：
 
 ```
