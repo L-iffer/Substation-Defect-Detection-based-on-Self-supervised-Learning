@@ -36,7 +36,7 @@ datasets/
 ------
 首先，需要安装[detectron2](https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md)。
 
-__预测：__
+__预测__
 
 ```
 cd detection \
