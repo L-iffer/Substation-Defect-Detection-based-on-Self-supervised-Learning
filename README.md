@@ -38,7 +38,7 @@ cd detection \
   python demo.py \
   --config-file configs/voc.yaml \
   --input images/input1.jpg \
-  --output output/
+  --output output/ \
   --opts MODEL.WEIGHTS models/voc_inference.pth
 ```
 在预测的脚本文件中：  
